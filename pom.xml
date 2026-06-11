@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany</groupId>
-    <artifactId>mavenproject2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.github.bagasstvermilion</groupId>
+    <artifactId>103022300035_bagaspratama_praktikci-cd</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Github Packages</name>
+            <url>https://maven.pkg.github.com/bagasstvermilion/103022300035_BagasPratama_PraktikCI-CD</url>
+        </repository>
+    </distributionManagement>
+    
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -31,4 +40,19 @@
         <maven.compiler.target>23</maven.compiler.target>
         <exec.mainClass>com.mycompany.mavenproject2.Calculator</exec.mainClass>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.0.3922</version>
+            </plugin>
+        </plugins>
+    </build>    
 </project>
